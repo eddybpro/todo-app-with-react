@@ -103,6 +103,7 @@ function App() {
             name="check"
             id="check"
             className="Head-Check"
+            aria-label="check"
             onChange={addTask}
           />
           <input
