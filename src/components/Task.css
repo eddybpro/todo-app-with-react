@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+:root {
+  --color-brand-1: hsl(220, 98%, 61%);
+  --color-check-bg-1: hsl(192, 100%, 67%);
+  --color-check-bg-2: hsl(280, 87%, 65%);
+
+  /* Light Theme */
+
+  --th1-color-brand-1: hsl(235, 19%, 35%);
+  --th1-color-brand-2: hsl(236, 9%, 61%);
+
+  --th1-color-site-1: hsl(236, 33%, 92%);
+  --th1-color-site-2: hsl(0, 0%, 98%);
+  --th1-color-site-3: hsl(233, 11%, 84%);
+
+  /* Dark Theme */
+
+  --th2-color-brand-1: hsl(236, 33%, 92%);
+  --th2-color-brand-2: hsl(234, 11%, 52%);
+  --th2-color-brand-3: hsl(237, 14%, 26%);
+  --th2-color-brand-4: hsl(234, 39%, 85%);
+
+  --th2-color-site-1: hsl(235, 21%, 11%);
+  --th2-color-site-2: hsl(235, 24%, 19%);
+  --th2-color-site-3: hsl(233, 14%, 35%);
+
+  --font-josif-sans: "Josefin Sans", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-josif-sans);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.TaskBox {
+  padding: 2rem;
+  border-bottom: 1px solid var(--th2-color-site-3);
+  display: grid;
+  grid-template-columns: 3rem 1fr 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.TaskBox-CheckBox {
+  appearance: none;
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--th2-color-site-3);
+  place-items: center;
+  cursor: pointer;
+}
+
+.TaskBox-CheckBox.completed {
+  appearance: none;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: url("../assets/icon-check.svg"),
+    linear-gradient(var(--color-check-bg-1), var(--color-check-bg-2));
+  background-position: center, center;
+  background-size: 70% 70%, cover;
+  background-repeat: no-repeat, no-repeat;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.TaskBox-CheckBox:checked::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: url("../assets/icon-check.svg"),
+    linear-gradient(var(--color-check-bg-1), var(--color-check-bg-2));
+  background-position: center, center;
+  background-size: 70% 70%, cover;
+  background-repeat: no-repeat, no-repeat;
+  border-radius: 50%;
+}
+
+.TaskBox-Task {
+  font-size: 1.6rem;
+  color: var(--th2-color-brand-1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.TaskBox-Task.completed {
+  text-decoration: line-through;
+}
+
+.TaskBox-ClearTask {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 1.8rem;
+  cursor: pointer;
+}
+
+.TaskBox-ClearTask > img {
+  width: 100%;
+}
